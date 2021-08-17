@@ -8,7 +8,6 @@ def imageName = 'jenkinsciinfra/jenkinsio'
 
 if (!env.CHANGE_ID) {
     if (env.BRANCH_NAME == null) {
-        projectProperties.add(pipelineTriggers([cron('* * * * *'), pollSCM('* * * * *')]))
         projectProperties.add(disableConcurrentBuilds())
     }
 }
